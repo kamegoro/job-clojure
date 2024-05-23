@@ -1,11 +1,2 @@
 {:duct.database/sql
- {:connection-uri "jdbc:postgresql://localhost:5432/postgres?user=root&password=root"}
-
- :duct.migrator/ragtime
- {:migrations [#ig/ref :job_clojure2.migration/create-todos]}
-
- [:duct.migrator.ragtime/sql :job_clojure2.migration/create-todos]
- {:up ["CREATE TABLE todos (id SERIAL  PRIMARY KEY, title TEXT)"
-       "INSERT INTO todos (title) values('test1')"
-       "INSERT INTO todos (title) values('test2')"]
-  :down ["DROP TABLE todos"]}}
+ {:connection-uri "jdbc:postgresql://localhost:5432/postgres?user=root&password=root"}}
