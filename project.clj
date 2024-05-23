@@ -8,6 +8,7 @@
                  [duct/module.logging "0.5.0"]
                  [duct/module.sql "0.6.1"]
                  [duct/module.web "0.7.3"]
+                 [duct/migrator.ragtime "0.3.2"]
                  [org.postgresql/postgresql "42.2.19"]]
   :plugins [[duct/lein-duct "0.12.3"]]
   :main ^:skip-aot job-clojure2.main
