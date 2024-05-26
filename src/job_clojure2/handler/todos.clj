@@ -2,6 +2,6 @@
   (:require [ataraxy.response :as response]
             [integrant.core :as ig]))
 
-(defn list-handler [_] [::response/ok {:message "ok"}])
+(defn get-handler [_] [::response/ok {:message "ok"}])
 
-(defmethod ig/init-key ::list [_ _] list-handler)
+(defmethod ig/init-key ::get [_ _] get-handler)

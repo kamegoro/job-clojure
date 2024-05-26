@@ -8,8 +8,9 @@
                  [duct/module.logging "0.5.0"]
                  [duct/module.sql "0.6.1"]
                  [duct/module.web "0.7.3"]
-                 [duct/migrator.ragtime "0.3.2"]
-                 [org.postgresql/postgresql "42.2.19"]]
+                 [inflections "0.14.2"]
+                 [org.postgresql/postgresql "42.2.19"]
+                 [metosin/ring-http-response "0.9.3"]]
   :plugins [[duct/lein-duct "0.12.3"]]
   :main ^:skip-aot job-clojure2.main
   :resource-paths ["resources" "target/resources"]
@@ -23,7 +24,7 @@
    :profiles/dev {}
    :project/dev  {:source-paths   ["dev/src"]
                   :resource-paths ["dev/resources"]
-                  :dependencies   [[integrant/repl "0.3.2"]
+                  :dependencies   [[integrant/repl "0.3.3"]
                                    [hawk "0.2.11"]
                                    [eftest "0.5.9"]
                                    [kerodon "0.9.1"]]}})

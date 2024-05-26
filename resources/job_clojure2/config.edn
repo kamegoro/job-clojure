@@ -2,9 +2,11 @@
  {:duct.core/project-ns job-clojure2
 
   :duct.router/ataraxy
-  {:routes
-   {[:get "/todos"] [:job-clojure2.handler.todos/list]}
-   :job-clojure2.handler.todos/list {}}}
+  {:routes {[:get "/system/ping"] [:job-clojure2.handler.system/ping]
+            [:get "/todos"] [:job-clojure2.handler.todos/get]}}
+
+  :job-clojure2.handler.system/ping {}
+  :job-clojure2.handler.todos/get {}}
 
  :duct.profile/dev   #duct/include "dev"
  :duct.profile/local #duct/include "local"
