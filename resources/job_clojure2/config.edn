@@ -1,12 +1,15 @@
 {:duct.profile/base
  {:duct.core/project-ns job-clojure2
 
+  :job-clojure2.gateway.todo/todo-gateway {}
+
   :duct.router/ataraxy
   {:routes {[:get "/system/ping"] [:job-clojure2.handler.system/ping]
             [:get "/todos"] [:job-clojure2.handler.todos/get]}}
 
   :job-clojure2.handler.system/ping {}
-  :job-clojure2.handler.todos/get {}}
+  :job-clojure2.handler.todos/get
+  {:todo-gateway #ig/ref :job-clojure2.gateway.todo/todo-gateway}}
 
  :duct.profile/dev   #duct/include "dev"
  :duct.profile/local #duct/include "local"
