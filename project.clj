@@ -2,18 +2,23 @@
   :description "FIXME: write description"
   :url "http://example.com/FIXME"
   :min-lein-version "2.0.0"
-  :dependencies [[org.clojure/clojure "1.10.3"]
-                 [duct/core "0.8.0"]
+  :dependencies [[org.clojure/clojure "1.12.7"]
+                 [duct/core "0.8.1"]
                  [duct/module.ataraxy "0.3.0"]
                  [duct/module.logging "0.5.0"]
                  [duct/module.sql "0.6.1"]
-                 [duct/module.web "0.7.3"]
+                 [duct/module.web "0.7.4"]
                  [com.layerware/hugsql "0.5.3"]
                  [com.github.seancorfield/next.jdbc "1.3.939"]
                  [inflections "0.14.2"]
                  [tick "0.7.5"]
-                 [org.postgresql/postgresql "42.2.19"]
-                 [metosin/ring-http-response "0.9.3"]]
+                 [org.postgresql/postgresql "42.7.14"]
+                 [metosin/ring-http-response "0.9.5"]
+                 ;; duct/module.web pulls older releases of these with known vulnerabilities
+                 [ring/ring-core "1.15.6"]
+                 [ring/ring-jetty-adapter "1.15.6"]
+                 [metosin/jsonista "1.0.2"]
+                 [org.apache.commons/commons-lang3 "3.22.0"]]
   :plugins [[duct/lein-duct "0.12.3"]
             [dev.weavejester/lein-cljfmt "0.12.0"]]
   :main ^:skip-aot job-clojure2.main
@@ -30,5 +35,4 @@
                   :resource-paths ["dev/resources"]
                   :dependencies   [[integrant/repl "0.3.3"]
                                    [hawk "0.2.11"]
-                                   [eftest "0.5.9"]
-                                   [kerodon "0.9.1"]]}})
+                                   [eftest "0.5.9"]]}})
